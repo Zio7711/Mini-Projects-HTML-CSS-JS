@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  /* give the background a gradient color*/
+  background: linear-gradient(200deg, #ddd6f3, #faaca8);
+}
+/* center everything */
+body,
+.navbar,
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar {
+  position: relative;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 50px;
+}
+.navbar input {
+  width: 40px;
+  height: 40px;
+  /* make the input element transparent */
+  opacity: 0;
+  cursor: pointer;
+}
+.navbar span {
+  position: absolute;
+  left: 25px;
+  width: 30px;
+  height: 4px;
+  /* now two lines are at the same place */
+  /* we need to set the second line to the right place */
+  top: calc(50% - 10px);
+  border-radius: 15px;
+  background-color: #999;
+  /* now we cannot check the checkbox by clicking the span */
+  /* we need the following property to solve it */
+  pointer-events: none;
+  /* reverse transformation when folding it back */
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out 0.3s;
+}
+/* the second line the the third element in navbar so here we write 3 */
+.navbar span:nth-child(3) {
+  top: calc(50% + 6px);
+}
+.navbar ul {
+  width: 0;
+  overflow: hidden;
+  /* make the transition more natural */
+  transition: all 0.5s;
+
+  /* to prevent the text taken extra line, we need to add an another property */
+  white-space: nowrap;
+}
+.navbar ul li {
+  list-style: none;
+  margin: 0px 15px;
+}
+.navbar ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+}
+.navbar ul li a:hover {
+  color: #fb7299;
+}
+/*when the checkbox is checked, we change the ul width */
+.navbar input:checked ~ ul {
+  width: 350px;
+}
+.navbar input:checked ~ span:nth-child(2) {
+  top: calc(50% - 2px);
+  transform: rotate(-45deg);
+  background-color: #fb7299;
+  /* here it will execute the top first and then transform */
+  transition: top 0.3s ease-in-out, transform 0.3s ease-in-out 0.3s;
+}
+.navbar input:checked ~ span:nth-child(3) {
+  top: calc(50% - 2px);
+  transform: rotate(45deg);
+  background-color: #fb7299;
+  transition: top 0.3s ease-in-out, transform 0.3s ease-in-out 0.3s;
+}
