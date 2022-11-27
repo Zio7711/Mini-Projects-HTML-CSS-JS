@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signature</title>
+
+    <style>
+      * {
+        margin: 0;
+      }
+
+      #cvs {
+        background-color: #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="cvs"></canvas>
+    <button id="save">Save</button>
+    <button id="clear">Clear</button>
+  </body>
+
+  <script>
+    const cvs = document.getElementById("cvs");
+    cvs.width = window.innerWidth;
+    cvs.height = window.innerHeight;
+
+    const ctx = cvs.getContext("2d");
+
+    ctx.lineWidth = 15;
+
+    let isDrawing = false;
+    cvs.addEventListener("mousedown", (e) => {
+      isDrawing = true;
+      ctx.moveTo(e.pageX, e.pageY);
+    });
+
+    cvs.addEventListener("mousemove", (e) => {
+      if (isDrawing) {
+        ctx.lineTo(e.pageX, e.pageY);
+        ctx.stroke();
+      }
+    });
+
+    cvs.addEventListener("mouseup", (e) => {
+      isDrawing = false;
+    });
+
+    const saveButton = document.getElementById("save");
+    const clearButton = document.getElementById("clear");
+
+    saveButton.addEventListener("click", () => {
+      const dataURL = cvs.toDataURL();
+      const a = document.createElement("a");
+      a.href = dataURL;
+      a.download = "image.png";
+      a.click();
+    });
+
+    clearButton.addEventListener("click", () => {
+      ctx.beginPath();
+      ctx.clearRect(0, 0, cvs.width, cvs.height);
+    });
+  </script>
+</html>

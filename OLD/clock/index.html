@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+    <style>
+      .clock {
+        background: url(./clock.png) no-repeat center center;
+        width: 300px;
+        height: 300px;
+        position: relative;
+        margin: 0 auto;
+      }
+
+      .hours {
+        background-color: #000;
+        width: 8px;
+        height: 70px;
+        position: absolute;
+        left: 146px;
+        top: 115px;
+      }
+
+      .minutes {
+        background-color: #666;
+        width: 4px;
+        height: 90px;
+        position: absolute;
+        left: 148px;
+        top: 105px;
+      }
+
+      .seconds {
+        background-color: #999;
+        width: 2px;
+        height: 90px;
+        position: absolute;
+        left: 148px;
+        top: 105px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="clock">
+      <div class="hours"></div>
+      <div class="minutes"></div>
+      <div class="seconds"></div>
+    </div>
+
+    <script>
+      const run = () => {
+        const date = new Date();
+        const second = date.getSeconds();
+        const minute = date.getMinutes();
+        let hour = date.getHours();
+
+        if (hour >= 12) {
+          hour -= 12;
+        }
+
+        const hourEl = document.querySelector(".hours");
+        const minuteEl = document.querySelector(".minutes");
+        const secondEl = document.querySelector(".seconds");
+
+        hourEl.style.transform = `rotate(${
+          (hour + minute / 60) * 30
+        }deg) translateY(-35px)`;
+
+        minuteEl.style.transform = `rotate(${
+          (minute + second / 60) * 6
+        }deg) translateY(-35px)`;
+
+        secondEl.style.transform = `rotate(${second * 6}deg) translateY(-35px)`;
+      };
+
+      run();
+
+      setInterval(() => {
+        run();
+      });
+    </script>
+  </body>
+</html>

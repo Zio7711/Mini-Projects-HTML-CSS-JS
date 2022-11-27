@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flip Lottery</title>
+
+    <style>
+      .title {
+        text-align: center;
+      }
+
+      .box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 330px;
+        margin: 0 auto;
+      }
+
+      .item {
+        position: relative;
+        margin: 5px;
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+      }
+
+      .style1,
+      .style2 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        text-align: center;
+        transition: transform 0.4s;
+      }
+
+      .style1 {
+        background-color: #ff8800;
+        color: #fff;
+      }
+
+      .style2 {
+        color: #ff8800;
+        border: 1px solid #ff8800;
+        padding: 0 10px;
+        transform: scale(0);
+        background-color: #ffe6c9;
+      }
+
+      .hide {
+        transform: scaleX(0);
+      }
+
+      .show {
+        transform: scaleX(1);
+      }
+
+      .show-result {
+        transform: scaleX(1);
+        opacity: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="title">You Have <label id="count">0</label> Chance(s)</div>
+    <div class="box"></div>
+
+    <script>
+      //lottery list
+      const list = [
+        { id: 1, name: "Thanks For Playing", is: true },
+        { id: 2, name: "Thanks For Playing", is: true },
+        { id: 3, name: "Thanks For Playing", is: true },
+        { id: 4, name: "You Win $50", is: false },
+        { id: 5, name: "$500 Gift Card", is: false },
+        { id: 6, name: "iPhone 14", is: false },
+        { id: 7, name: "Mazda 3", is: false },
+        { id: 8, name: "Ipad Pro", is: false },
+        { id: 9, name: "Thanks For Playing", is: false },
+      ].sort((v) => Math.random() - 0.5);
+
+      const winArr = list.filter((v) => v.is);
+      const remainingArr = list.filter((v) => !v.is);
+
+      let count = 3;
+      const box = document.querySelector(".box");
+      const countEl = document.querySelector("#count");
+      countEl.innerHTML = count;
+      box.innerHTML = list
+        .map(
+          (item) => `   <div class="item" onclick="flip(this)">
+      <div class="style1">Lottery</div>
+      <div class="style2"></div>
+    </div>
+    `
+        )
+        .join("");
+
+      const flip = (me) => {
+        if (count === 0) return;
+
+        me.querySelector(".style1").classList.add("hide");
+
+        setTimeout(() => {
+          const item = winArr.pop();
+          const style2 = me.querySelector(".style2");
+          style2.innerHTML = item.name;
+          style2.classList.add("show");
+        }, 400);
+
+        count--;
+        countEl.innerHTML = count;
+
+        if (count === 0) {
+          setTimeout(() => {
+            box.querySelectorAll(".style1").forEach((v) => {
+              v.classList.add("hide");
+              if (v.nextElementSibling.className.indexOf("show") === -1) {
+                const item = remainingArr.pop();
+                v.nextElementSibling.innerHTML = item.name;
+              }
+            });
+
+            setTimeout(() => {
+              box.querySelectorAll(".style2").forEach((v) => {
+                if (v.className.indexOf("show") === -1) {
+                  v.classList.add("show-result");
+                }
+              });
+            }, 400);
+          }, 1000);
+        }
+      };
+    </script>
+  </body>
+</html>

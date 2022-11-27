@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>scratch-off lottery</title>
+  </head>
+  <body>
+    <canvas id="cvs" width="600" height="340"></canvas>
+
+    <script>
+      const cvs = document.getElementById("cvs");
+      const ctx = cvs.getContext("2d");
+
+      const img = new Image();
+      img.src = "./gray-cover.jpeg";
+      img.onload = () => {
+        cvs.style.background = `url(./lottery-background.jpeg) no-repeat center center`;
+        cvs.style.backgroundSize = "100%";
+        ctx.drawImage(img, 0, 0, cvs.width, cvs.height);
+      };
+
+      let isClearing = false;
+
+      cvs.addEventListener("mousedown", () => {
+        isClearing = true;
+      });
+
+      cvs.addEventListener("mousemove", (e) => {
+        if (isClearing) {
+          const clearSize = 30;
+
+          ctx.clearRect(
+            e.pageX - clearSize,
+            e.pageY - clearSize,
+            clearSize,
+            clearSize
+          );
+        }
+      });
+
+      cvs.addEventListener("mouseup", () => {
+        isClearing = false;
+      });
+    </script>
+  </body>
+</html>

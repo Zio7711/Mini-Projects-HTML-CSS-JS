@@ -1,0 +1,53 @@
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  font-size: 24px;
+  padding: 20px 30px;
+  border: none;
+  color: cyan;
+  background-color: black;
+  /* outline: 4px solid #fff; */
+  border-radius: 10px;
+  margin-top: 40px;
+  z-index: 1;
+
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  background-color: yellow;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+
+  width: 200%;
+  height: 200%;
+  animation: rotate 3s linear infinite;
+  transform-origin: 0 0;
+  z-index: -2;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  top: 2px;
+  left: 2px;
+
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border-radius: 10px;
+  z-index: -1;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}

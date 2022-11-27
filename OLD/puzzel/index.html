@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Puzzle</title>
+
+    <style id="style1">
+      .map {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .map-item {
+        box-sizing: border-box;
+        background: url(./pic.png) no-repeat;
+      }
+
+      .hide {
+        opacity: 0;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="map"></div>
+
+    <script>
+      const map = document.querySelector(".map");
+      const rows = 3;
+      const cols = 3;
+      const size = 120;
+      const itemEls = [];
+      const posStyle = [];
+      const posClsName = [];
+      for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+          itemEls.push(
+            `<div data-v="${i}-${j}" class="map-item" style="width:${size}px;height:${size}px;"></div>`
+          );
+
+          posStyle.push(
+            `.s${i}-${j}{background-position:${-j * size}px ${-i * size}px}`
+          );
+
+          posClsName.push(`s${i}-${j}`);
+        }
+      }
+
+      map.innerHTML = itemEls.join("");
+      map.style.width = `${size * cols}px`;
+      posClsName.sort(() => {
+        return Math.random() - 0.5;
+      });
+
+      const list = [...map.childNodes];
+      list.forEach((el) => {
+        el.classList.add(posClsName.shift());
+        el.onclick = () => {
+          const indexList = el
+            .getAttribute("data-v")
+            .split("-")
+            .map((v) => Number(v));
+
+          [
+            `${indexList[0] - 1}-${indexList[1]}`,
+            `${indexList[0] + 1}-${indexList[1]}`,
+            `${indexList[0]}-${indexList[1] - 1}`,
+            `${indexList[0]}-${indexList[1] + 1}`,
+          ].forEach((v) => {
+            const makeEl = document.querySelector(`[data-v='${v}']`);
+
+            if (makeEl && makeEl.className.indexOf("hide") >= 0) {
+              const sCls = makeEl.classList[1];
+              makeEl.className = `map-item ${el.classList[1]}`;
+              el.className = `map-item ${sCls} hide`;
+            }
+          });
+
+          let isOk = list.every((el) => {
+            return "s" + el.getAttribute("data-v") === el.classList[1];
+          });
+
+          if (isOk) {
+            setTimeout(() => {
+              alert("You Win!");
+            });
+          }
+        };
+      });
+
+      document.querySelector(`.s${rows - 1}-${cols - 1}`).classList.add("hide");
+
+      document.getElementById("style1").append(posStyle.join(""));
+    </script>
+  </body>
+</html>
