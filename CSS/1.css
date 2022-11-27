@@ -1,62 +1,81 @@
+/* Let's add the styles */
+
+/* clear the default margin and padding */
 * {
   margin: 0;
   padding: 0;
 }
+
 body {
-  /* flex center */
+  /* flex box to make the card center */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* make body height as 100 view height */
   height: 100vh;
-  /* give the background a gradient color */
-  background-image: linear-gradient(200deg, #5ee7df, #b490ca);
-  /* make it look more natural*/
+
+  /* background color */
+  background-image: linear-gradient(
+    200deg,
+    rgb(67, 185, 221),
+    rgb(158, 47, 170)
+  );
+
+  /* it is not perfect yet, it looks a little bit weird */
+  /* we add another property to make it look more natural */
   perspective: 1000px;
 }
+
 .card {
   position: relative;
-  width: 300px;
-  height: 450px;
-  /* round border */
-  border-radius: 30px;
-  cursor: pointer;
   background-color: #fff;
+  height: 450px;
+  width: 300px;
+  cursor: pointer;
+  border-radius: 30px;
+
   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
-  /* give the parent element a 3d box property, so that the child element can go to the back */
-  /* this property is added to the parent element, but influent the child element */
+
+  /* now the animation always turns back to the original stage */
+  /* add the forwards keywords to make it stop at the 100% */
+  animation: reverse-rotate 1.2s cubic-bezier(0.66, -0.47, 0.33, 1.5) forwards;
+
+  /* give the parent element a 3d box property, so that the child element */
+  /* can go to the back, this property is added to the parent(card) element */
+  /* but it influent the child element */
   transform-style: preserve-3d;
-  /* give the card the default animation */
-  animation: rotate-reverse 1.2s cubic-bezier(0.66, -0.47, 0.33, 1.5) forwards;
 }
-/* set the hover effect animation */
+
+/* add the hover effect */
 .card:hover {
-  /* forwards is to make the animation stop at the 100% not turning back to the original status */
   animation: rotate 1.2s cubic-bezier(0.66, -0.47, 0.33, 1.5) forwards;
 }
+
 .front,
 .back {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-around;
-  font-size: 20px;
+  align-items: center;
+  font-size: 1.5rem;
+
   background-color: #fff;
   border-radius: 30px;
-  /* 隐藏旋转div元素的背面 */
+
   /* hide the back of the spinning div */
   backface-visibility: hidden;
 }
 
+/* rotate the back */
 .back {
   transform: rotateY(180deg);
 }
 
+/* key frames */
 @keyframes rotate {
   0% {
     transform: rotateY(0deg);
@@ -65,7 +84,8 @@ body {
     transform: rotateY(180deg);
   }
 }
-@keyframes rotate-reverse {
+
+@keyframes reverse-rotate {
   0% {
     transform: rotateY(180deg);
   }
