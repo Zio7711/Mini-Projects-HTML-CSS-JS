@@ -4,6 +4,7 @@
 3. Input Animation
 4. Bee Cursor
 5. Transition Tag In Navbar
+6. Full-Screen Covered Menu
 
 # Old Projects
 1. Button Animation
