@@ -3,6 +3,7 @@
 2. Expandable Navbar
 3. Input Animation
 4. Bee Cursor
+5. Transition Tag In Navbar
 
 # Old Projects
 1. Button Animation

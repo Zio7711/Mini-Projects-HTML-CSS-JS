@@ -1,0 +1,93 @@
+/* clear the default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(200deg, #a8edea, #fed6e3);
+}
+
+.wrapper {
+  width: 60vw;
+  height: 60px;
+  line-height: 60px;
+  background-color: #fff;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+}
+
+.wrapper nav {
+  display: flex;
+  position: relative;
+}
+
+.wrapper nav label {
+  flex: 1;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.wrapper nav label a {
+  position: relative;
+  z-index: -1;
+  color: #333;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* icon style */
+.wrapper nav label a i {
+  font-size: 25px;
+  margin: 0 7px;
+}
+
+/* hide the radio input */
+.wrapper nav input {
+  display: none;
+}
+
+.wrapper nav .tab {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  left: 0px;
+  bottom: 0px;
+  background: linear-gradient(to right, #f09819, #ff5858);
+  border-radius: 50px;
+  transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper nav #home:checked ~ label.home a,
+.wrapper nav #comment:checked ~ label.comment a,
+.wrapper nav #mail:checked ~ label.mail a,
+.wrapper nav #like:checked ~ label.like a,
+.wrapper nav #user:checked ~ label.user a {
+  color: #fff;
+  transition: 0.6s;
+}
+
+.wrapper nav #comment:checked ~ .tab {
+  left: 20%;
+}
+
+.wrapper nav #mail:checked ~ .tab {
+  left: 40%;
+}
+
+.wrapper nav #like:checked ~ .tab {
+  left: 60%;
+}
+
+.wrapper nav #user:checked ~ .tab {
+  left: 80%;
+}

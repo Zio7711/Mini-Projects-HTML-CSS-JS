@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transition Tags In Navbar</title>
+    <!-- import css -->
+    <link rel="stylesheet" href="../CSS/5.css" />
+    <!-- import font awesome css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav>
+        <input type="radio" name="tab" id="home" checked />
+        <input type="radio" name="tab" id="comment" />
+        <input type="radio" name="tab" id="mail" />
+        <input type="radio" name="tab" id="like" />
+        <input type="radio" name="tab" id="user" />
+
+        <label for="home" class="home">
+          <a href="#">
+            <!-- here we need to add icons from font awesome -->
+            <i class="fa-solid fa-house-user"></i> </a
+        ></label>
+
+        <label for="comment" class="comment">
+          <a href="#"> <i class="fa-solid fa-comment"></i> </a
+        ></label>
+
+        <label for="mail" class="mail">
+          <a href="#"> <i class="fa-solid fa-envelope"></i> </a
+        ></label>
+
+        <label for="like" class="like">
+          <a href="#"> <i class="fa-solid fa-heart"></i></i> </a
+        ></label>
+
+        <label for="user" class="user">
+          <a href="#"><i class="fa-solid fa-user"></i> </a
+        ></label>
+
+        <!-- background div of the tags -->
+        <div class="tab"></div>
+      </nav>
+    </div>
+  </body>
+</html>
