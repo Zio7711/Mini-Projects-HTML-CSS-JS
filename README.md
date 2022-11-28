@@ -6,6 +6,10 @@
 5. Transition Tag In Navbar
 6. Full-Screen Covered Menu
 
+# 50 mini projects
+1. Expending Cards
+2. 3D Boxes Background
+
 # Old Projects
 1. Button Animation
 2. Clock
