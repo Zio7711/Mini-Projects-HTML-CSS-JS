@@ -2,6 +2,7 @@
 1. 3D Hover Effect
 2. Expandable Navbar
 3. Input Animation
+4. Bee Cursor
 
 # Old Projects
 1. Button Animation
