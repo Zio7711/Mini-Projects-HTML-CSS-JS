@@ -12,6 +12,7 @@
 2. 3D Boxes Background
 3. Animated Countdown
 4. Verify Account UI
+5. Auto Text Effect
 
 # Old Projects
 1. Button Animation
