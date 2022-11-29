@@ -9,6 +9,7 @@
 # 50 mini projects
 1. Expending Cards
 2. 3D Boxes Background
+3. Animated Countdown
 
 # Old Projects
 1. Button Animation
