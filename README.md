@@ -5,6 +5,7 @@
 4. Bee Cursor
 5. Transition Tag In Navbar
 6. Full-Screen Covered Menu
+7. Profile Card
 
 # 50 mini projects
 1. Expending Cards
