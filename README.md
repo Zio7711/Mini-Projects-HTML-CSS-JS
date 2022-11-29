@@ -10,6 +10,7 @@
 1. Expending Cards
 2. 3D Boxes Background
 3. Animated Countdown
+4. Verify Account UI
 
 # Old Projects
 1. Button Animation
