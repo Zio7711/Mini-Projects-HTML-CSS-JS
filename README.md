@@ -13,6 +13,7 @@
 3. Animated Countdown
 4. Verify Account UI
 5. Auto Text Effect
+6. Background Slider
 
 # Old Projects
 1. Button Animation
