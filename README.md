@@ -21,6 +21,7 @@ Also, I have created videos for each of the projects. You can find them on my Yo
 7. Blurry Loading
 8. Button Ripple Effect
 9. Split Landing Page
+10. Progress Steps
 
 # Old Projects
 1. Button Animation
