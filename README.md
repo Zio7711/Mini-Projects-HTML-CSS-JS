@@ -19,6 +19,7 @@ Also, I have created videos for each of the projects. You can find them on my Yo
 5. Auto Text Effect
 6. Background Slider
 7. Blurry Loading
+8. Button Ripple Effect
 
 # Old Projects
 1. Button Animation
