@@ -23,6 +23,7 @@ Also, I have created videos for each of the projects. You can find them on my Yo
 9. Split Landing Page
 10. Progress Steps
 11. Three Switches
+12. Scrolling Animation
 
 # Old Projects
 1. Button Animation
