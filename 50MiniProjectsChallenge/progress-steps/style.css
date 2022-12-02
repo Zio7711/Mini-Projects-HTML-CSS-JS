@@ -29,6 +29,7 @@ body {
   margin-bottom: 30px;
   max-width: 100%;
   width: 350px;
+  transition: 0.4s ease;
 }
 
 .progress-container::before {
@@ -52,6 +53,7 @@ body {
   z-index: -1;
   height: 4px;
   width: 0%;
+  transition: 0.4s ease;
 }
 
 .circle {
