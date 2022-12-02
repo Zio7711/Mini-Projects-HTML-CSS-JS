@@ -22,6 +22,7 @@ Also, I have created videos for each of the projects. You can find them on my Yo
 8. Button Ripple Effect
 9. Split Landing Page
 10. Progress Steps
+11. Three Switches
 
 # Old Projects
 1. Button Animation
