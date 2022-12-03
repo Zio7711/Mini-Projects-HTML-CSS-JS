@@ -24,7 +24,8 @@ Also, I have created videos for each of the projects. You can find them on my Yo
 10. Progress Steps
 11. Three Switches
 12. Scrolling Animation
-13. Event Keycodes
+13. Event KeyCodes
+14. Rotating Nav Animation
 
 # Old Projects
 1. Button Animation
