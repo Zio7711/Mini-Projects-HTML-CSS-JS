@@ -27,6 +27,7 @@ Also, I have created videos for each of the projects. You can find them on my Yo
 13. Event KeyCodes
 14. Rotating Nav Animation
 15. Hover Board
+16. Kinetic Loader
 
 # Old Projects
 1. Button Animation
