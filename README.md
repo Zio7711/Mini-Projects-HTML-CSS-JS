@@ -26,6 +26,7 @@ Also, I have created videos for each of the projects. You can find them on my Yo
 12. Scrolling Animation
 13. Event KeyCodes
 14. Rotating Nav Animation
+15. Hover Board
 
 # Old Projects
 1. Button Animation
