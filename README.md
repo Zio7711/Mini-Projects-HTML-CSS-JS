@@ -28,6 +28,7 @@ Also, I have created videos for each of the projects. You can find them on my Yo
 14. Rotating Nav Animation
 15. Hover Board
 16. Kinetic Loader
+17. Hover Search Widget
 
 # Old Projects
 1. Button Animation
