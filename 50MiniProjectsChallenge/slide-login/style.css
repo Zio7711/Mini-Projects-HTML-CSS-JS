@@ -1,16 +1,12 @@
 * {
-  /* 初始化 */
   margin: 0;
   padding: 0;
 }
 body {
-  /* 100%窗口高度 */
   height: 100vh;
-  /* 弹性布局 水平+垂直居中 */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* 渐变背景 */
   background: linear-gradient(200deg, #f3e7e9, #e3eeff);
 }
 .container {
@@ -18,13 +14,10 @@ body {
   width: 650px;
   height: 415px;
   border-radius: 5px;
-  /* 阴影 */
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
-  /* 相对定位 */
   position: relative;
 }
 .form-box {
-  /* 绝对定位 */
   position: absolute;
   top: -10%;
   left: 5%;
@@ -37,12 +30,10 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 2;
-  /* 动画过渡 加速后减速 */
   transition: 0.5s ease-in-out;
 }
 .register-box,
 .login-box {
-  /* 弹性布局 垂直排列 */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,10 +46,8 @@ body {
 h1 {
   text-align: center;
   margin-bottom: 25px;
-  /* 大写 */
   text-transform: uppercase;
   color: #fff;
-  /* 字间距 */
   letter-spacing: 5px;
 }
 input {
@@ -66,7 +55,6 @@ input {
   width: 70%;
   color: #fff;
   border: none;
-  /* 下边框样式 */
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   padding: 10px 0;
   text-indent: 10px;
@@ -105,12 +93,10 @@ input:focus::placeholder {
 }
 .con-box {
   width: 50%;
-  /* 弹性布局 垂直排列 居中 */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* 绝对定位 居中 */
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
