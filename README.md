@@ -29,6 +29,7 @@ Also, I have created videos for each of the projects. You can find them on my Yo
 15. Hover Board
 16. Kinetic Loader
 17. Hover Search Widget
+18. Animated Share Widget
 
 # Old Projects
 1. Button Animation
