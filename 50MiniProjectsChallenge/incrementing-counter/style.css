@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(25deg, #281a50, #3b5181, #458bb6, #45caed);
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+}
+
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 30px 50px;
+}
+
+.counter,
+i {
+  font-size: 50px;
+  margin-top: 10px;
+}
+
+@media (max-width: 500px) {
+  .counter-container {
+    margin: 30px 20px;
+  }
+}
