@@ -33,6 +33,8 @@ Also, I have created videos for each of the projects. You can find them on my Yo
 19. Form Wave
 20. Dad Jokes
 21. Incrementing Counter
+22. Sticky Navbar
+23. Double Vertical Slider
 
 # Old Projects
 1. Button Animation
