@@ -35,6 +35,7 @@ Also, I have created videos for each of the projects. You can find them on my Yo
 21. Incrementing Counter
 22. Sticky Navbar
 23. Double Vertical Slider
+24. Toast Notification
 
 # Old Projects
 1. Button Animation
